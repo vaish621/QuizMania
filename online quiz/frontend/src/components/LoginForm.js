@@ -1,21 +1,21 @@
 // LoginForm.js
 
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import axios from './axiosConfig';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post('/api/auth/login', { username, password });
       console.log('Login successful:', response.data);
-      history.push('/create'); // Redirect to create quiz page on successful login
+      navigate('/create'); // Redirect to create quiz page on successful login
     } catch (err) {
       console.error('Login Error:', err);
       setError('Invalid credentials');
