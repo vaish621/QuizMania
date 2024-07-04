@@ -1,7 +1,7 @@
 // CreateQuizForm.js
 
 import React, { useState } from 'react';
-import axios from '../axiosConfig';
+import axios from './axiosConfig';
 
 const CreateQuizForm = () => {
   const [quizName, setQuizName] = useState('');
