@@ -8,7 +8,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchQuizzes = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/questions');
+        const response = await axios.get(`${window.location.origin}/api/questions`);
         setQuizzes(response.data);
       } catch (err) {
         console.error('Failed to fetch quizzes:', err);
