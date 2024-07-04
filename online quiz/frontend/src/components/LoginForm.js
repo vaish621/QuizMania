@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import axios from '../axiosConfig';
+import axios from './axiosConfig';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
