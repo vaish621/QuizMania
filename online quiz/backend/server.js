@@ -11,9 +11,9 @@ const app = express();
 app.use(express.json()); 
 app.use(cors()); 
 
-=
+
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/quizdb';
-=
+
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
