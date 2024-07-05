@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors()); 
 
 
-const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/quizdb';
+const mongoURI = process.env.MONGODB_URI;
 
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
@@ -35,7 +35,7 @@ app.use((err, req, res, next) => {
 app.use('/api', questionsRoute);
 
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
